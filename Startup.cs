@@ -43,7 +43,12 @@ namespace SportiveOrder
             var supportedCultures = new List<CultureInfo>
             {
                  new CultureInfo("tr-TR"),
-                 new CultureInfo("en-US")
+                 new CultureInfo("en-US"),
+                 new CultureInfo("ar-DZ"),
+                 new CultureInfo("es-CR"),
+                 new CultureInfo("fr-LU")
+
+
 
             };
             services.AddLocalization(options =>
@@ -51,6 +56,8 @@ namespace SportiveOrder
                 options.ResourcesPath = "Resources";
 
             });
+           
+
             services.Configure<RequestLocalizationOptions>(opt =>
             {
                 opt.DefaultRequestCulture = new RequestCulture("tr-TR");
@@ -63,6 +70,7 @@ namespace SportiveOrder
                 };
             });
 
+            // DÝL DESTEÐÝ
             services.AddControllersWithViews().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix).AddDataAnnotationsLocalization().AddRazorRuntimeCompilation();
 
 
