@@ -1,0 +1,61 @@
+﻿@model IEnumerable<CRUDUser>
+
+@{
+    ViewData["Title"] = Localizer["user"];
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@if(ViewBag.msg != null){
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    @ViewBag.msg
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+}
+<p>
+    <a asp-action="Create" class="btn btn-primary mt-5 mb-2" >@Localizer["create_new"]</a>
+</p>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Localizer["username"]
+            </th>
+            <th>
+                @Localizer["role_name"]
+            </th>
+            <th>
+                @Localizer["email"]
+            </th>
+            <th>
+
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td class="text-right" >
+                <a asp-action="Edit" asp-controller="User" asp-area="Admin" asp-route-UserId="@item.UserId" class="btn btn-info mx-1" >@Localizer["edit"]</a> 
+                <a asp-action="ResetPassword" asp-controller="User" asp-area="Admin" asp-route-UserId="@item.UserId" class="btn btn-warning mx-1">@Localizer["reset_password"]</a>
+                <a asp-action="Delete" asp-controller="User" asp-area="Admin" asp-route-UserId="@item.UserId" class="btn btn-danger">@Localizer["delete"]</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
