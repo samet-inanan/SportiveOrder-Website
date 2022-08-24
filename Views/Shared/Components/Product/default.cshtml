@@ -29,8 +29,9 @@
             <div class="col-md-4">
                 <figure class="card card-product-grid card-lg">
                     <a asp-action="Details" asp-controller="Home" asp-route-id="@item.ProductId" class="img-wrap">
-                        <img src="~/images/product1.jpg" />
+                        <img src="~/images/wt-black.jpg" />
                     </a>
+                   
                     <figcaption class="info-wrap">
                         <a asp-action="Details" asp-controller="Home" asp-route-id="@item.ProductId" class="title">@item.ProductName</a>
                     </figcaption>
@@ -39,9 +40,11 @@
                         <div class="price-wrap">
                             <span class="price h5">@item.SalePrice ₺</span>
                         </div> <!-- price-wrap.// -->
-    </div> <!-- bottom-wrap.// -->
-    </figure>
-    </div> <!-- col.// -->
+                    </div> <!-- bottom-wrap.// -->
+                </figure>
+            </div> <!-- col.// -->
+
+
 
 }
 else
