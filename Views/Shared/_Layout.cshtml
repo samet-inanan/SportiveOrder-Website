@@ -57,21 +57,36 @@
                         <div class="d-flex justify-content-end">
                             @if (SignInManager.IsSignedIn(User) && User.IsInRole("Member"))
                             {
-                                <a asp-action="Cart" asp-controller="Home" class="widget-header mr-3">
-                                    <div class="icon">
-                                        <i class="icon-sm rounded-circle border fa fa-shopping-cart"></i>
-                                    </div>
-                                </a>
-                            }
+                        <a asp-action="Cart" asp-controller="Home" class="widget-header mr-3">
+                            <div class="icon">
+                                <i class="icon-sm rounded-circle border fa fa-shopping-cart"></i>
+                            </div>
+                        </a>}
                             <div class="widget-header dropdown">
                                 <a href="#" data-toggle="dropdown" class="dropdown-toggle" data-offset="20,10">
                                     <div class="icon icon-sm rounded-circle border ">
                                         <i class="fa fa-user"></i>
                                     </div>
-                                    <span class="sr-only">Profile actions</span>
+
+                                    <span class="sr-only"></span>
                                 </a>
                                 <partial name="_LoginPartial" />
                             </div>  <!-- widget-header .// -->
+                            
+                            <div class="widget-header dropdown ml-3">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle" data-offset="20,10">
+                                    <div class="icon icon-sm rounded-circle border">
+                                        <i class="fas fa-registered"></i>
+                                    </div>
+
+                                    <span class="sr-only"></span>
+                                </a>
+
+                            </div>
+
+                            
+
+
                         </div> <!-- widgets-wrap.// -->
                     </div> <!-- col.// -->
                 </div> <!-- row.// -->
